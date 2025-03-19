@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencil Sales - Best Writing Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .product-price {
+            color: #4CAF50;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        .cart-message {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffeb3b;
+            border: 2px solid #fbc02d;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Pencil World!</h1>
+    <p>Your one-stop shop for the best pencils</p>
+</header>
+
+<div class="container">
+    <div class="product-card">
+        <img src="pencil1.png" alt="Wooden Pencil" class="product-image">
+        <h2 class="product-title">Classic Wooden Pencil</h2>
+        <p class="product-price">$0.50 each</p>
+        <button class="add-to-cart" onclick="addToCart('Classic Wooden Pencil')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="pencil2.jpg" alt="Mechanical Pencil" class="product-image">
+        <h2 class="product-title">Premium Mechanical Pencil</h2>
+        <p class="product-price">$2.99 each</p>
+        <button class="add-to-cart" onclick="addToCart('Premium Mechanical Pencil')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="pencil3.jpg" alt="Color Pencil Set" class="product-image">
+        <h2 class="product-title">Color Pencil Set (12 pcs)</h2>
+        <p class="product-price">$5.99 per set</p>
+        <button class="add-to-cart" onclick="addToCart('Color Pencil Set')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="cart-message" id="cartMessage">
+    <p>Item added to cart successfully!</p>
+</div>
+
+<script>
+    function addToCart(productName) {
+        const cartMessage = document.getElementById('cartMessage');
+        cartMessage.innerHTML = `<p>${productName} has been added to your cart!</p>`;
+        cartMessage.style.display = 'block';
+
+        // Auto-hide the message after 3 seconds
+        setTimeout(() => {
+            cartMessage.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
